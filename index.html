@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+</head>
+	<style>
+	@font-face {
+  font-family: 'iconfont';
+  src: url('font/iconfont.eot');
+  src: url('font/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('font/iconfont.woff') format('woff'),
+  url('font/iconfont.ttf') format('truetype'),
+  url('font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+			#box{
+				width: 200px;
+				height: 200px;
+				background: red;
+				position: relative;
+			}
+			#box span{
+				cursor:pointer;
+				position: absolute;
+				right:0;
+				top:0;
+			}
+			#box1{
+				width: 180px;
+				height: 220px;
+				border: 1px solid red;
+				margin: 0 auto;
+				text-align: center;
+				line-height: 47px;
+				position: relative;
+			}
+			.qr-cold{
+				text-decoration: none;
+				
+				color:red;
+			}
+			#box1 i{
+				width: 20px;
+				height: 20px;
+				border:1px solid red;
+				position: absolute;
+				left:-22px;
+				top:-1px;
+				line-height: 20px;
+				color: red;
+				cursor:pointer;
+			}             
+		
+	</style>
+<body>
+	<!-- <h1 id="text">哈哈</h1> -->
+	<div id="box"><span id="span">关闭</span></div>
+	<div id="box1">
+		<i class="iconfont" id="cold">&#xe624;</i>
+		<a href="javascript:;" class="qr-cold">
+			<span>手机淘宝</span>
+			<img src="1.png" alt="图片">
+		</a>
+	</div>
+	<script>
+           /*window.onload= function(){                         
+			var a = "<h1>nihao</h1>";
+			var oText = document.getElementById("text");
+			alert(a);
+
+			alert(oText.innerHTML);
+			oText.innerHTML = "<h3>辣鸡</h3>";
+				alert("<h2>lala</h2>");
+		 }
+				document.write("<h1>aaaaa</h1>");
+				*/
+			
+			/*需求：点击关闭，div消失*/
+    /*
+    * 思路：
+    *   1.获取元素
+    *   2.给关闭的这个元素添加点击事件
+    *   3.写一个消失的方法
+    *   4.把这个消失的方法赋给具有点击事件的元素
+    * */
+			var oBox=document.getElementById("box");
+			var oSpan=document.getElementById("span");
+			oSpan.onclick=function(){
+				oBox.style.display="none";
+			}
+			var oBox1 = document.getElementById("box1");
+			var oCold = document.getElementById("cold");
+			oCold.onclick=function(){
+				oBox1.style.display="none";
+			}
+
+	</script>
+</body>
+</html>
